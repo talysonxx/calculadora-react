@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import './App.css'
 
 function App() {
   useEffect(() => {
@@ -9,7 +8,7 @@ function App() {
   // useStates
   const [valorTela, setValorTela] = useState('')
   const [resultado, setResultado] = useState(0)
-  const [acumulador, setAcumulador] = useState(0)
+  // const [acumulador, setAcumulador] = useState(0)
   const [operado, setOperado] = useState(false)
 
   // componentes
@@ -35,11 +34,12 @@ function App() {
     flexDirection: 'column',
     width: 300,
     border: '1px solid #000',
-    fontFamily: 'Roboto'
+    fontFamily: 'Roboto',
+    margin: '50px auto'
   }
   const cssBotoes = {
     flexDirecion: 'row',
-    flexWrap: 'wrap',
+    flexWrap: 'wrap'
   }
   const cssTela = {
     display: 'flex',
@@ -49,7 +49,8 @@ function App() {
     backgroundColor: '#444',
     paddingRight: 20,
     paddingLeft: 20,
-    width: 260
+    width: 260,
+    overflow: 'auto'
   }
   const cssTelaOperacao = {
     fontSize: 20,
@@ -95,7 +96,7 @@ function App() {
     setOperado(false)
     setValorTela('')
     setResultado(0)
-    setAcumulador(0)
+    // setAcumulador(0)
     console.log('memória limpa')
     return
   }
@@ -112,7 +113,7 @@ function App() {
     try{
       // eval faz o cáculo de tudo que está na tela
       const r = eval(valorTela)
-      setAcumulador(r)
+      // setAcumulador(r)
       setResultado(r)
       setOperado(true)
     }
