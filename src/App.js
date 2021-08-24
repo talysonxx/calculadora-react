@@ -92,6 +92,10 @@ function App() {
       console.log('começando nova operacao')
       return
     }
+
+    // verificações
+    if(valorTela === '' && (digito === '+' || digito === '-' || digito === '*' || digito === '/' || digito === ')' || digito === '.')) return
+
     if(digito === valorTela[valorTela.length - 1] && (digito === '+' || digito === '-' || digito === '*' || digito === '/' || digito === '(' || digito === ')' || digito === '.')) return
 
     const valorDigitadoTela = valorTela + digito
@@ -99,12 +103,14 @@ function App() {
     return
   }
   function limparMemoria(){
-    setOperado(false)
-    setValorTela('')
-    setResultado(0)
-    // setAcumulador(0)
-    console.log('memória limpa')
-    return
+    if(!(valorTela === '')){
+      setOperado(false)
+      setValorTela('')
+      setResultado(0)
+      // setAcumulador(0)
+      console.log('memória limpa')
+      return
+    }
   }
   function operacao(oper){
     // bs = backspace
@@ -116,19 +122,21 @@ function App() {
       setOperado(false)
       return
     }
-    try{
-      // eval faz o cáculo de tudo que está na tela
-      const r = eval(valorTela)
-      // setAcumulador(r)
-      setResultado(r)
-      setOperado(true)
-    }
-    catch{
-      setResultado('ERRO!')
-      console.log('ocorreu algum erro')
-    }
-    finally{
-      console.log('fim da operação')
+    if(!(valorTela === '')){
+      try{
+        // eval faz o cáculo de tudo que está na tela
+        const r = eval(valorTela)
+        // setAcumulador(r)
+        setResultado(r)
+        setOperado(true)
+      }
+      catch{
+        setResultado('ERRO!')
+        console.log('ocorreu algum erro')
+      }
+      finally{
+        console.log('fim da operação')
+      }
     }
   }
 
