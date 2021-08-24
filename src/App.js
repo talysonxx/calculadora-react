@@ -77,7 +77,7 @@ function App() {
 
   // funções
   function adicionarDigitoTela(digito){
-    if((digito === '+' || '-' || '*' || '/') && operado){
+    if((digito === '+' || digito === '-' || digito === '*' || digito === '/') && operado){
       console.log('adicionarDigitoTela')
       setOperado(false)
       setValorTela(resultado + digito)
@@ -85,7 +85,9 @@ function App() {
     }
     if(operado){
       setValorTela(digito)
+      setResultado(0)
       setOperado(false)
+      console.log('operado: ' + operado)
       return
     }
     const valorDigitadoTela = valorTela + digito
