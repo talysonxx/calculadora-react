@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import './App.css'
 
 function App() {
   useEffect(() => {
@@ -35,7 +36,8 @@ function App() {
     width: 300,
     border: '1px solid #000',
     fontFamily: 'Roboto',
-    margin: '50px auto'
+    margin: '50px auto',
+    backgroundColor: 'rgba(128, 128, 128, 0.535)'
   }
   const cssBotoes = {
     flexDirecion: 'row',
