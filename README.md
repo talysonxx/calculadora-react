@@ -1,4 +1,4 @@
-#### Calculadora simples feita com react
+# Calculadora simples feita com react
 
 ###### Meus **contatos**
 
